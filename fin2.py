@@ -16,30 +16,45 @@ from pyblackscholesanalytics.market.market import MarketEnvironment
 from pyblackscholesanalytics.portfolio.portfolio import Portfolio
 from pyblackscholesanalytics.options.options import PlainVanillaOption
 from pyblackscholesanalytics.plotter.plotter import PortfolioPlotter
+import matplotlib.pyplot as plt
 
-
-def get_time_parameter(option, kind='date'):
-    # date time-parameter
+def time_values(option, kind='date'):
+ 
     if kind == 'date':
 
-        # valuation date of the option
-        emission_date = option.get_t()
-
-        # emission/expiration date of the option
-        expiration_date = option.get_T()
+        stardate = option.get_t()
+        expire = option.get_T()
 
         # time-parameter as a date-range of 5 valuation dates between t and T-10d
-        time_parameter = pd.date_range(start=emission_date,
-                                       end=expiration_date - pd.Timedelta(days=20),
+        time_values = pd.date_range(start=stardate,
+                                       end=expire - pd.Timedelta(days=20),
                                        periods=5)
 
-    # time-to-maturity time parameter    
     else:
 
-        # time-parameter as a list of times-to-maturity
-        time_parameter = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+        time_values = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
-    return time_parameter
+    return time_values
+
+def test_matplot():
+    labels = ['G1', 'G2', 'G3', 'G4', 'G5']
+    men_means = [20, 35, 30, 35, 27]
+    women_means = [25, 32, 34, 20, 25]
+    men_std = [2, 3, 4, 1, 2]
+    women_std = [3, 5, 2, 3, 3]
+    width = 0.35       # the width of the bars: can also be len(x) sequence
+    
+    fig, ax = plt.subplots()
+    
+    ax.bar(labels, men_means, width, yerr=men_std, label='Men')
+    ax.bar(labels, women_means, width, yerr=women_std, bottom=men_means,
+           label='Women')
+    
+    ax.set_ylabel('Scores')
+    ax.set_title('Scores by group and gender')
+    ax.legend()
+    
+    plt.show()
 
 def readTickers():
     tickers = []
@@ -55,8 +70,8 @@ def readTickers():
 def getTickers(tickers):
  
     start = datetime.datetime(2018, 1, 1)
-    end   = datetime.datetime(2020, 10, 9)
-    data = pdr.get_data_yahoo(tickers, start = start, end = end)
+    enddate   = datetime.datetime(2020, 10, 9)
+    data = pdr.get_data_yahoo(tickers, start = start, end = enddate)
     return data
 
 def getStockPrice():
@@ -74,4 +89,5 @@ if __name__ == "__main__":
     print(msft.info)
     market_env = MarketEnvironment()
     print(market_env)
+    test_matplot()
   
