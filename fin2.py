@@ -17,6 +17,7 @@ from pyblackscholesanalytics.portfolio.portfolio import Portfolio
 from pyblackscholesanalytics.options.options import PlainVanillaOption
 from pyblackscholesanalytics.plotter.plotter import PortfolioPlotter
 
+
 def get_time_parameter(option, kind='date'):
     # date time-parameter
     if kind == 'date':
