@@ -80,9 +80,14 @@ def getStockPrice():
     prices = getTickers(rd)
     print (prices)
 
+def setPortfolio():
+    option_spread_ptf = Portfolio(name="Option Spread")
+    print(option_spread_ptf)
+    
 def main():
     print("*** Stock Price ***")
     getStockPrice()
+    
 if __name__ == "__main__":
     main()
     msft = fyf.Ticker("CRON")
@@ -90,4 +95,4 @@ if __name__ == "__main__":
     market_env = MarketEnvironment()
     print(market_env)
     test_matplot()
-  
+    setPortfolio()
