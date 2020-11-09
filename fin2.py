@@ -81,8 +81,26 @@ def getStockPrice():
     print (prices)
 
 def setPortfolio():
+    
+    mktEnv = MarketEnvironment()
+    # strikes
+    kl = 90
+    ks = 110
+    print(mktEnv)
     option_spread_ptf = Portfolio(name="Option Spread")
     print(option_spread_ptf)
+      # 90-call
+    vcl = PlainVanillaOption(mktEnv, K=kl, T='31-12-2021')
+    print(vcl)
+    
+    vcs = PlainVanillaOption(mktEnv, K=ks, T='31-12-2021')
+    print(vcs)
+
+    # creation of bull-spread portfolio strategy   
+    option_spread_ptf.add_instrument(vcl, 1)
+    option_spread_ptf.add_instrument(vcs, -1)
+    print(option_spread_ptf)
+
     
 def main():
     print("*** Stock Price ***")
@@ -92,7 +110,5 @@ if __name__ == "__main__":
     main()
     msft = fyf.Ticker("CRON")
     print(msft.info)
-    market_env = MarketEnvironment()
-    print(market_env)
     test_matplot()
     setPortfolio()
