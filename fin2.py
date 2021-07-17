@@ -50,6 +50,7 @@ def test_matplot2():
 
 
 def test_matplot():
+    test_matplot2()
     labels = ['G1', 'a2XXXXXXXXXXXXXXX', 'GQ', 'G4', 'G5']
     men_means = [20, 35, 30, 35, 27]
     women_means = [25, 32, 34, 20, 25]
