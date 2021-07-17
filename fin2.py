@@ -28,7 +28,7 @@ def time_values(option, kind='date'):
         stardate = option.get_t()
         expire = option.get_T()
 
-        # time-parameter as a date-range of 5 valuation dates between t and T-10d
+        # time-parameter as a date-range of 5 valuation dates between t and T-10d fdsgss
         time_values = pd.date_range(start=stardate,
                                        end=expire - pd.Timedelta(days=20),
                                        periods=5)
