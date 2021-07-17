@@ -40,7 +40,7 @@ def time_values(option, kind='date'):
     return time_values
 
 def test_matplot():
-    labels = ['G1', 'G2', 'GQ', 'G4', 'G5']
+    labels = ['G1', 'a2', 'GQ', 'G4', 'G5']
     men_means = [20, 35, 30, 35, 27]
     women_means = [25, 32, 34, 20, 25]
     men_std = [2, 3, 4, 1, 2]
