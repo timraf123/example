@@ -38,6 +38,14 @@ def time_values(option, kind='date'):
         time_values = [0.02, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
     return time_values
+def test_matplot2():
+    labels = ['G1', 'a2XXXXXXXXXXXXXXX', 'GQ', 'G4', 'G5']
+        men_means = [20, 35, 30, 35, 27]
+        women_means = [25, 32, 34, 20, 25]
+        men_std = [2, 3, 4, 1, 2]
+        women_std = [3, 5, 2, 3, 3]
+        width = 0.35       # the width of the bars: can 
+
 
 def test_matplot():
     labels = ['G1', 'a2XXXXXXXXXXXXXXX', 'GQ', 'G4', 'G5']
