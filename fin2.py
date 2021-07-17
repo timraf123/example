@@ -48,6 +48,15 @@ def test_matplot2():
         women_std = [3, 5, 2, 3, 3]
         width = 0.35       # the width of the bars: can 
 
+def test_matplot3():
+
+
+        labels = ['G1', 'a2XXXXXXXXXXXXXXX', 'GQ', 'G4', 'G5']
+        men_means = [20, 35, 30, 35, 27]
+        women_means = [25, 32, 34, 20, 25]
+        men_std = [2, 3, 4, 1, 2]
+        women_std = [3, 5, 2, 3, 3]
+        width = 0.35       # the width of the bars: can 
 
 def test_matplot():
  
