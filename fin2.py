@@ -35,12 +35,12 @@ def time_values(option, kind='date'):
 
     else:
 
-        time_values = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+        time_values = [0.02, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
     return time_values
 
 def test_matplot():
-    labels = ['G1', 'G2', 'G3', 'G4', 'G5']
+    labels = ['G1', 'G2', 'GQ', 'G4', 'G5']
     men_means = [20, 35, 30, 35, 27]
     women_means = [25, 32, 34, 20, 25]
     men_std = [2, 3, 4, 1, 2]

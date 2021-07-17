@@ -26,7 +26,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 ###############################################################################
 print("machine learning ... ")  
-print("load dataset")
+print("load datasfghet")
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(url, names=names)
