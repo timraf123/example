@@ -35,7 +35,7 @@ def time_values(option, kind='date'):
 
     else:
 
-        time_values = [0.02, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+        time_values = [0.1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
     return time_values
 def test_matplot2():
